@@ -15,10 +15,13 @@ def callback():
 @app.command()
 def tag(services: List[str], env: str = typer.Option(...)):
     typer.echo("Setting git tags to trigger deployment(s)")
-    typer.echo(f"Deploying to {env} environment.")
-    typer.echo("Deploying following microservices:")
-    for x in services:
-        typer.echo(f"{x}")
+    if 'all' in services:
+        typer.echo(f"Deploying all services to {env} environment")
+    else:
+        typer.echo(f"Deploying to {env} environment.")
+        typer.echo("Deploying following microservices:")
+        for x in services:
+            typer.echo(f"{x}")
 
 
 if __name__ == "__main__":
