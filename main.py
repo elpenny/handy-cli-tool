@@ -4,6 +4,9 @@ from typing import List
 
 app = typer.Typer()
 
+# Planned commands:
+# checkRequiredDeployments - runs only validation of changes in a branch against list of services
+# slew of commands related to running local env of services
 @app.callback()
 def callback():
     """
@@ -12,6 +15,11 @@ def callback():
     which tags git repo its ran in.
     """
 
+# Planned features: 
+# option to analyze repo and output warning if not all affected services are going to be tagged
+# dry-run
+# services and envs validation
+# progress bars
 @app.command()
 def tag(services: List[str], env: str = typer.Option(...)):
     typer.echo("Setting git tags to trigger deployment(s)")
