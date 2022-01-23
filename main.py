@@ -15,11 +15,13 @@ def callback():
     which tags git repo its ran in.
     """
 
+# This should be subcommand to command "services"
 # Planned features: 
 # option to analyze repo and output warning if not all affected services are going to be tagged
 # dry-run
 # services and envs validation
 # progress bars
+# hints when input has errors
 @app.command()
 def tag(services: List[str], env: str = typer.Option(...)):
     typer.echo("Setting git tags to trigger deployment(s)")
@@ -31,6 +33,10 @@ def tag(services: List[str], env: str = typer.Option(...)):
         for x in services:
             typer.echo(f"{x}")
 
+# This is also part os "services" command
+@app.command()
+def list():
+    typer.echo("Listing services in this repository")
 
 if __name__ == "__main__":
     app()
