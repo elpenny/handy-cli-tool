@@ -13,7 +13,7 @@ def callback():
     """
 
 @app.command()
-def triggerbuild(services: List[str], env: str = typer.Option(...)):
+def tag(services: List[str], env: str = typer.Option(...)):
     typer.echo("Setting git tags to trigger deployment(s)")
     typer.echo(f"Deploying to {env} environment.")
     typer.echo("Deploying following microservices:")
