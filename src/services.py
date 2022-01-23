@@ -1,19 +1,7 @@
-from multiprocessing.dummy import Array
 import typer
 from typing import List
 
 app = typer.Typer()
-
-# Planned commands:
-# checkRequiredDeployments - runs only validation of changes in a branch against list of services
-# slew of commands related to running local env of services
-@app.callback()
-def callback():
-    """
-    My handy cli app.
-    For now it has triggerbuild command 
-    which tags git repo its ran in.
-    """
 
 # This should be subcommand to command "services"
 # Planned features: 
