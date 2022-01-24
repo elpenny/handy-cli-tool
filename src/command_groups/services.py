@@ -21,10 +21,13 @@ def tag(services: List[str], env: str = typer.Option(...)):
         for x in services:
             typer.echo(f"{x}")
 
-# This is also part os "services" command
 @app.command()
 def list():
     typer.echo("Listing services in this repository")
+
+@app.command()
+def verify():
+    typer.echo("Checking which services source code was changed against main branch")
 
 if __name__ == "__main__":
     app()
