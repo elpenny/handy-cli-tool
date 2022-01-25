@@ -4,6 +4,11 @@ from typing import List
 
 
 app = typer.Typer()
+@app.callback()
+def main():
+    """
+    Manage microservices based in this repository
+    """
 
 # Planned features: 
 # option to analyze repo and output warning if not all affected services are going to be tagged
@@ -17,7 +22,7 @@ def tag(services: List[str] = typer.Argument(..., help=help_text["tag_services"]
         env: str = typer.Option(..., "--env", "-e", help=help_text["tag_env"]),
         noValidation: bool = typer.Option(False, "--no-validation", "-v", help=help_text["tag_validation"])):
     """
-    This command lets you tag current repository to trigger deployments.
+    tag services for deployments
 
     """
     if noValidation:
@@ -34,10 +39,16 @@ def tag(services: List[str] = typer.Argument(..., help=help_text["tag_services"]
 
 @app.command()
 def list():
+    """
+    list microservices based in this repository
+    """
     typer.echo("Listing deployable services and possible environment targets for this repository")
 
 @app.command()
 def verify():
+    """
+    check which services must be deployed based on changes on active branch
+    """
     typer.echo("Checking which services source code was changed against main branch")
 
 if __name__ == "__main__":

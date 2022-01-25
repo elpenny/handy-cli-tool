@@ -10,8 +10,7 @@ app.add_typer(services.app, name="services")
 def callback():
     """
     My handy cli app.
-    For now it has triggerbuild command 
-    which tags git repo its ran in.
+    It has few command groups.
     """
 
 if __name__ == "__main__":
