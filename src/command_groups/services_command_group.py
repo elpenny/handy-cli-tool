@@ -1,6 +1,9 @@
-from .text import help_text
 import typer
+import sys
+from .text import help_text
 from typing import List
+sys.path.append("..")
+from subservices.configuration import loadConfig
 
 
 app = typer.Typer()
@@ -36,6 +39,8 @@ def tag(services: List[str] = typer.Argument(..., help=help_text["tag_services"]
         typer.echo("Deploying following microservices:")
         for x in services:
             typer.echo(f"{x}")
+
+    loadConfig()
 
 @app.command()
 def list():
