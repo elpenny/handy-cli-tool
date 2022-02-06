@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import typer
-import command_groups.services as services
+import command_groups.services_command_group as services
 
 app = typer.Typer()
 app.add_typer(services.app, name="services")
