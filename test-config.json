@@ -1,0 +1,16 @@
+{
+    "services":[
+        {
+            "name":"serviceA",
+            "path":"./serviceA"
+        },
+        {
+            "name":"serviceB",
+            "path":"./serviceB"
+        },
+        {
+            "name":"serviceC",
+            "path":"./serviceC"
+        }
+    ]
+}
