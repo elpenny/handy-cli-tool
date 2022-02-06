@@ -1,4 +1,8 @@
 import json
 
-json_file = open('test-config.json')
-json_config = json.loads(json_file)
+def loadConfig():
+
+    with open('./test-config.json') as json_file:
+        json_config = json.load(json_file)
+        print(json_config)
+        return json_config
